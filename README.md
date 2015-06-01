@@ -1,3 +1,3 @@
 #Tarea pengo
 
-Usé el modelo de customer y mediante el ID de dicho customer, se imprimió un saludo con su nombre
+Este modulo es una implementacion de Magento, para comprender la interaccion entre bloques, controladores y layouts, asi como consumir el modelo de clientes para leer informacion de ellos 
