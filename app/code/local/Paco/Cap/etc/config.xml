@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	 <modules>
+		 <Paco_Cap>
+		 	<version>0.0.1</version>
+		 </Paco_Cap>
+	 </modules>
+
+	 <global>
+	 	 <blocks>
+			<cap>
+				<class>Paco_Cap_Block</class>
+			</cap>
+		</blocks>
+<!--
+		 <helpers>
+			 <cap>
+			 	<class>Paco_Cap_Helper</class>
+			 </cap>
+		 </helpers>
+
+		 <models>
+			 <cap>
+			 	<class>Paco_Cap_Model</class>
+			 </cap>
+		</models> -->
+
+	</global>
+
+	<frontend>
+		<routers>
+			<cap>
+				<use>standard</use>
+				<args>
+					<module>Paco_Cap</module>
+					<frontName>cap</frontName>
+				</args>
+			</cap>
+		</routers>
+
+		<layout>
+			 <updates>
+				 <cap>
+				 	<file>cap.xml</file>
+				 </cap>
+			 </updates>
+		</layout>
+
+	</frontend>
+
+</config>

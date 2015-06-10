@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	 <modules>
+		 <Paco_Cap>
+			 <active>true</active>
+			 <codePool>local</codePool>
+		 </Paco_Cap>
+	 </modules>
+</config>
