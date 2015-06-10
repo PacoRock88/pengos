@@ -13,6 +13,7 @@ class Paco_Cap_Block_Hello extends Mage_Core_Block_Template
 
 		echo $customer>getName();*/
 
+<<<<<<< HEAD
 		$id = $this->getRequest()->getParam('id');
 		$customer = Mage::getModel('customer/customer')->load($id);
 
@@ -27,6 +28,11 @@ class Paco_Cap_Block_Hello extends Mage_Core_Block_Template
 		}
 		
 		return $name;
+=======
+		$params = $this->getRequest()->getParams();
+		$customer = Mage::getModel('customer/customer')->load($params['id']);
+		echo $customer->getName();
+>>>>>>> 2c0b3f456b9db40308b9c302504dae22a92f23ec
     }
 
 }

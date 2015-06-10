@@ -12,6 +12,7 @@ class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 		//echo ('Hola Mundo :D');
 	}
 
+<<<<<<< HEAD
 	public function customersAction()
 	{
 		//LOAD PARA ATRIBUTO (ROW)
@@ -124,4 +125,6 @@ class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 			}
 		}
 	}
+=======
+>>>>>>> 2c0b3f456b9db40308b9c302504dae22a92f23ec
 }
