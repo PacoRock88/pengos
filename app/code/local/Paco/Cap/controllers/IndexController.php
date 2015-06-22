@@ -1,6 +1,4 @@
 <?php
-
-
 class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 {
 
@@ -9,9 +7,9 @@ class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 	{
 		$this->loadLayout();
 		$this->renderLayout();
-		//echo ('Hola Mundo :D');
 	}
 
+	//OBTENER DATOS DEL CUSTOMER FILTRADOS POR AND Y OR
 	public function customersAction()
 	{
 		//LOAD PARA ATRIBUTO (ROW)
@@ -44,7 +42,7 @@ class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 	}
 
 
-	//FUNCION DONDE LEER TODAS LAS ORDENES
+	//LEER TODAS LAS ORDENES
 	public function ordersAction()
 	{
 		$orders = Mage::getModel('sales/order')
@@ -59,15 +57,17 @@ class Paco_Cap_IndexController extends Mage_Core_Controller_Front_Action
 	public function userordersAction()
 	{
 
+		$name = $this->getRequest()->getParam('name');
 		$orders= Mage::getModel('sales/order')	
 		->getCollection()
 		->addAttributeToSelect('*')
-		->addFieldToFilter('customer_firstname', array('like' => 'Pa%')); 
+		->addFieldToFilter('customer_firstname', $name); 
  
 		if($orders ->count())
 		{
 			foreach($orders as $order)
 			{
+				echo '<pre>'; print_r($order->getIncrementId());
 				echo '<pre>'; print_r($order->getCustomerName());
 			}
 		}
