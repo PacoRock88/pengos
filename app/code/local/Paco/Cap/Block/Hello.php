@@ -4,16 +4,6 @@ class Paco_Cap_Block_Hello extends Mage_Core_Block_Template
 {
 	public function getName()
 	{
-		/*$id=Mage::app()->getRequest()->getParam('id');
-
-		$_customer = Mage::getModel('customer/customer')->getCollection()
-		->addAttributeToSelect('name')
-		->addAttributeToFilter('customer_id', $id)
-		->load();
-
-		echo $customer>getName();*/
-
-<<<<<<< HEAD
 		$id = $this->getRequest()->getParam('id');
 		$customer = Mage::getModel('customer/customer')->load($id);
 
@@ -28,11 +18,25 @@ class Paco_Cap_Block_Hello extends Mage_Core_Block_Template
 		}
 		
 		return $name;
-=======
-		$params = $this->getRequest()->getParams();
-		$customer = Mage::getModel('customer/customer')->load($params['id']);
-		echo $customer->getName();
->>>>>>> 2c0b3f456b9db40308b9c302504dae22a92f23ec
     }
 
+    //OBTIENE ORDENES FILTRADAS POR USUARIO
+	public function getUsuarios()
+	{
+
+		$name = $this->getRequest()->getParam('name');
+		$orders= Mage::getModel('sales/order')	
+		->getCollection()
+		->addAttributeToSelect('*')
+		->addFieldToFilter('customer_firstname', $name); 
+ 
+		if($orders ->count())
+		{
+			foreach($orders as $order)
+			{
+				echo '<pre>'; print_r($order->getIncrementId());
+				echo '<pre>'; print_r($order->getCustomerName());
+			}
+		}
+	}
 }
